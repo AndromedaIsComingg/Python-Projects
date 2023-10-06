@@ -1,4 +1,4 @@
-# Character Replacer
+# Highest-Number-Finder
 
 ##### This program prompts you to input numbers, gives you the option to terminate when you are done, then displays the highest number in the list of all the inputted numbers.
 
