@@ -11,6 +11,7 @@ word = input('please enter a word: ')
 # List slicing
 palin = word[::-1]
 
+# Creating conditional statements
 if word == palin:
 	print (f'{word} is a palindrome')
 else:
