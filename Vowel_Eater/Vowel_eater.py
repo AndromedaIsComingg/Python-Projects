@@ -13,7 +13,7 @@ while True:
 
 # This converts uppercases to lowercase
 	w = w.casefold()
-	
+
 # This regular expression substitutes a,e,i,o,u with an empty string
 	x = re.sub("[aeiou]", "", w)
 
