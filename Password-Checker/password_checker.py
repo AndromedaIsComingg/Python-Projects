@@ -1,11 +1,15 @@
 #!/usr/bin/python3
 
 
-c = 0
+c = 0 # This sets the beginning of the counter
 
+
+# Creating a while loop
 while c < 5:
 	c +=1
 	password  = input ("enter password: ")
+	
+	# Creating conditional statements
 	if len(password ) < 6:
 		print ("password  must be up to 6 characters")
 		print ("you have", (5 - c), "attempts remaining")
