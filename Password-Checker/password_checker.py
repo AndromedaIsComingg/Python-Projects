@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-
+# This program propmts a user to input a password, giving several condition as prompt 
+# & also counting down upon every attemp.
 
 c = 0 # This sets the beginning of the counter
 
