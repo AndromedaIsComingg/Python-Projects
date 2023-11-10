@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .color-primary {
+            background-color: #331ea8;
+        }
+
+        .color-primary-light {
+            background-color: #5c84cf; 
+        }
+        .create {
+            color: #1d1e6b;
+        }
+    </style>
+</head>
+
+<body class="color-primary min-h-screen font-sans antialiased text-white">
+    <div class="container mx-auto p-8">
+
+        <div class="mb-8 text-center">
+            <h1 class="text-4xl font-bold">Create a New Quiz</h1>
+        </div>
+
+        <div class="bg-color-primary-light p-8 rounded shadow-md">
+            <form action="/create" method="post">
+                <div id="quiz-form">
+                    <div class="mb-4">
+                        <label class="block text-white text-lg mb-2">Question:</label>
+                        <input type="text" name="question" class="create w-full px-3 py-2 rounded bg-white mb-2">
+                        <label class="block text-white text-lg mb-2">Options (comma separated):</label>
+                        <input type="text" name="options" class="create w-full px-3 py-2 rounded bg-white mb-2">
+                        <label class="block text-white text-lg mb-2">Correct Answer:</label>
+                        <input type="text" name="answer" class="create w-full px-3 py-2 rounded bg-white mb-4">
+                    </div>
+                </div>
+                <button type="button" onclick="addQuestion()" class="mb-4 inline-block bg-white create py-2 px-4 rounded hover:opacity-75 transition ease-in-out duration-200">Add another question</button><br>
+                <input type="submit" value="Create Quiz" class="create mt-4 inline-block bg-white py-2 px-4 rounded hover:opacity-75 transition ease-in-out duration-200">
+            </form>
+        </div>
+
+        <script>
+            function addQuestion() {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add("mb-4");
+                questionDiv.innerHTML = `
+                    <label class="block text-white text-lg mb-2">Question:</label>
+                    <input type="text" name="question" class="create w-full px-3 py-2 rounded bg-white mb-2">
+                    <label class="block text-white text-lg mb-2">Options (comma separated):</label>
+                    <input type="text" name="options" class="create w-full px-3 py-2 rounded bg-white mb-2">
+                    <label class="block text-white text-lg mb-2">Correct Answer:</label>
+                    <input type="text" name="answer" class="create w-full px-3 py-2 rounded bg-white mb-4">`;
+                document.getElementById('quiz-form').appendChild(questionDiv);
+            }
+        </script>
+
+    </div>
+</body>
+
+</html>
