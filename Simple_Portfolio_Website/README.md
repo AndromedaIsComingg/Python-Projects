@@ -41,10 +41,33 @@ and `'base',` will be added to the list of `INSTALLED_APPS` a show in the photo 
 
 ##### Creating template directory
 In the base folder, we will be creating a folder named `templates` inside which we will create another folder which corresponds with the app folder named `base`.
-inside the "base" folder we will create an `html` file which we will name `home.html`
+inside the "base" folder we will create an `html` file which we will name `home.html` and save the demo script `<h3>Hello world</h3>`
 
 
-<img width="761" alt="homeHTML created" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/89bbd5db-a984-45e4-8ddf-0ed01b78694b">
+<img width="752" alt="homeHTML created" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/7edacadd-6897-4761-9299-4c57a37fecb4">
+
+
+
+##### Adding the template folder in `settings.py`
+This is done so that the just created `template` folder with be recognised in the configuration.
+
+This is done by adding the following lines of code to the `settings.py` file
+``` python
+import os
+TEMPLATES = [
+    {
+        
+        'DIRS': [os.path.join('', 'templates'),
+                 os.path.join('', 'base', 'templates', 'base'),
+                
+                ]
+    }
+]
+```
+
+
+<img width="908" alt="settings template" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/7890bccd-498d-4db6-b345-e125bc5e7aed">
+
 
 
 ##### Creating function to render template
@@ -71,8 +94,29 @@ In the `base` app folder, we will create another file called `urls.py`
 This will be responsible for calling the function `home`, which will in turn render the template `home.html`
 
 
-<img width="1104" alt="urls config" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/7ac4a033-63bd-4d15-9b1c-b362a07ac0eb">
+<img width="909" alt="urls config" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/b257ce11-d749-42af-8a5d-0a82f0bc7978">
 
 
 ##### Configuring base urls.py file
-There is another default `url.py` file ine the base folder
+There is another file `urls.py` created by default in the `base/simplewebsite/` folder, this default one needs to be configured to recognise the one we created by using the `include` method
+
+
+<img width="1178" alt="urls 1" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/b3890e87-c6b7-4270-8c70-6652880ad16c">
+
+
+Which we will edited to :
+``` python
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('base.urls'))
+]
+```
+
+<img width="1135" alt="urls 2" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/7b7e3bbb-e11a-4223-a98f-38e5887b7536">
+
+
+Now we should be able to run our server to confirm the configuration
+We will be doing that from the cli using the command `python manage.py runserver`
