@@ -120,3 +120,35 @@ urlpatterns = [
 
 Now we should be able to run our server to confirm the configuration
 We will be doing that from the cli using the command `python manage.py runserver`
+
+
+<img width="793" alt="Hello world" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/c997b38c-ba0b-4aaa-85e6-d5b234300a8e">
+
+This shows that our template is well rendered
+
+
+##### Creating paths and files for static files
+We will be doing this by created a new folder in our root directory `simplewebsite`, this is where we will store our images, css and javascript etc.
+
+
+We will name this folder `staticfiles` inside which we will create a folder for all images named `images`, a folder for all css files named `css`, inside which we will create a css file named `main.css`
+
+
+<img width="570" alt="staticfiles dir" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/bbd8d525-14b1-4e47-8cc5-a5e07c4cd6e6">
+
+
+##### Configuring `settings.py` to recognise static files & paths
+
+From the `settings.py` file we are going to edit the `STATIC_URL = '/static/'` to `STATIC_URL = '/staticfiles/'`
+
+
+We will also add the line `MEDIA_URL = `'/images/'` so that the image directory will be recognised
+
+Also, we will add the line 
+``` python
+STATICFILES_DIRS = [
+   os.path.join('', 'staticfiles')
+]
+```
+this is to direct the configuration to the folder `staticfiles`
+
