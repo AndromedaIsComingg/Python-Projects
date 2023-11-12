@@ -1,4 +1,4 @@
-# SImple_Portfolio_Website
+# Simple_Portfolio_Website
 
 
 
@@ -148,7 +148,204 @@ Also, we will add the line
 ``` python
 STATICFILES_DIRS = [
    os.path.join('', 'staticfiles')
+
+
+<img width="892" alt="static dir edit" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/8cf7affe-05c6-463c-9f3c-5431eb42f2d1">
+
+
+
 ]
 ```
 this is to direct the configuration to the folder `staticfiles`
 
+
+In the `home.html` file we will paste and save the following lines of code:
+
+``` html
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dennis Ivanov</title>
+	<link href="{% static '/css/main.css'  %}" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+</head>
+<body>
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="card card-body h-100  border-info" id="profile-wrapper">
+					<img id="profile-pic" src="{% static 'images/steev.jpeg' %}" >
+					<hr>
+					<h4>Hi i am Stephen Olaleye!</h4>
+					<p>I am a Python developer and a DevOps Engineer</p>
+				</div>
+			</div>
+
+			<div class="col-md-9">
+				<div class="card card-body h-100  border-info">
+					<h4>Who i am</h4>
+					<hr>
+					<p>A versatile Python Developer/DevOps Engineer with a proven track record of creating efficient, scalable software solutions and streamlining deployment processes. Experienced in full-stack development, cloud technologies, and automation tools. 
+					I have strong problem-solving skills, a commitment to continuous improvement, and a proactive approach to challenges. Adept at collaborating with cross-functional teams to drive project success and enhance operational efficiency. I actively seek opportunities to apply my expertise in delivering robust software and optimising DevOps pipelines.</p>
+
+					<ul class="social-links">
+						<li><img class="social" src="{% static 'images/facebook.png' %}"></li>
+						<li><img class="social" src="{% static 'images/linkedin.png' %}"></li>
+						<li><img class="social" src="{% static 'images/twitter.png' %}"></li>
+						<li><img class="social" src="{% static 'images/youtube.png' %}"></li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="card card-body h-100">
+					<h5>Professinal Summary</h5>
+					<hr>
+					<p>Python Developer</p>
+
+					<p>•	Designing, coding, and maintaining Python applications, modules, and libraries to meet project requirements.
+
+					<p>	•	Collaborating with cross-functional teams, including front-end developers, back-end developers, and stakeholders to deliver comprehensive solutions.</p>
+
+					<p>	•	Optimising code for performance and efficiency, ensuring the application runs smoothly and efficiently.</p>
+
+					<p>	•	Conducting unit and integration testing, debugging code, and resolving issues to maintain code 			quality.</p>
+
+					<p>	•	Managing and maintaining code repositories using version control systems such as Git.</p>
+
+					<p>	•	Creating and maintaining technical documentation, including code comments and system architecture 		documentation.</p>
+
+					<p>	•	Integrating third-party APIs and services into Python applications, ensuring seamless data 				exchange.</p>
+
+					<p>	•	Developing and maintaining database structures and queries, often using technologies like SQL or 		 NoSQL databases.</p>
+					<p>	•	Implementing security best practices to protect applications and data, including authentication, 		 authorization, and encryption.</p>
+
+					<p>	•	Monitoring and analysing application performance, identifying and addressing bottlenecks and scaling issues.
+						</p>
+					</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="card card-body h-100">
+					<h5>Professional Summary</h5>
+					<hr> DevOps Engineer
+					<p>
+					<p>•	Actively contributing to the establishment of CI/CD pipelines, gaining hands-on experience in the end-to-end software delivery process.
+
+					<p>	•	Immersed in the world of Infrastructure as Code, utilizing tools like Terraform to automate cloud resource management under mentorship.
+
+					<p>	•	Collaborating with the development team using Git for version control, actively participating in collaborative coding practices.
+
+					<p>	•	Learning the fundamentals of containerization with Docker, contributing to the deployment consistency of applications.
+
+					<p>	•	Actively involved in tasks related to cloud platforms (e.g., AWS, Azure, or Google Cloud), contributing to resource optimization and scalability.
+
+					<p>	•	Exploring scripting languages like Bash and Python to automate routine tasks, enhancing efficiency and automation skills.
+
+					<p>	•	Assisting in the setup and understanding of monitoring tools, actively participating in the identification and response to potential issues.
+
+					<p>	•	Engaging in collaborative problem-solving with the team, providing support and contributing to solutions for improved system performance.
+
+					<p>	•	Developing an understanding of security measures, including authentication and authorization, to contribute to maintaining system integrity.
+
+					<p>	•	Taking the lead in initiating documentation practices for infrastructure configurations and processes, contributing to a comprehensive knowledge base.
+									</p>
+				<!--	<p>PS: Working on Node JS, Mongo DB and Machine Learning.</p> -->
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="card card-body h-100">
+					<h5>Education</h5>
+					<hr>
+					<p>	•	DevOps Engineering  - Darey.io, Jul 2021 - Present
+					<p>	•	Data Science with Python - Simplilearn/Skillup - 2023
+					<p>	•	AWS Cloud Computing - Simplilearn/Skillup - 2023
+					<p>	•	Cloud computing - Simplilearn/Skillup - 2023
+					<p>	•	Bachelor of Technology - BTech - Federal University of Technology Minna - Jan 2009 - Feb 2013</p>
+
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="card card-body h-100">
+					<h5>Projects</h5>
+				<hr>
+				<p>PROJECTS
+				<p>	•	DevOps Projects - GitHub-AndromedaIsComingg/Other-Projects: Projects > than 4       
+				<p>		Jul 2023 - Present                                                                            
+				<p>	•	Python projects - GitHub-AndromedaIsComingg/Python-Projects
+           		<p>		Oct 2021 - Present </p>
+				
+
+				</div>
+			</div>
+		</div>
+		<br>
+	</div>
+
+
+</body>
+</html>
+```
+
+
+And in the `main.css` file, we will paste and save the following lines of code:
+
+
+``` css
+body{
+	background-color:#F8F8F8!important;
+}
+
+#profile-wrapper{
+	text-align: center;
+}
+
+#profile-pic{
+	width:150px;
+	height: 150px;
+	border-radius: 50%;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+ul{
+	padding: 0;
+    list-style-type: none;
+}
+
+
+.social-links ul, li{
+	list-style-type:none;
+	display: inline-block;
+}
+
+.social{
+	width:20px;
+	height: 20px;
+}
+```
+
+
+This Should produce an output like in the photos below
+
+
+<img width="1273" alt="output 1" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/c29c7a27-8f6c-4121-b03d-727652c61f2f">
+
+<img width="1263" alt="output 2" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/28691098-5fed-4f1a-9134-691ce13264e1">
+
+<img width="1280" alt="output 3" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/3d0dfa3b-eff8-4d6d-88a8-b98d28bf430d">
+
+
+---------------------------------![Alt Text](https://cssbud.com/wp-content/uploads/2021/05/thanks-for-your-time.gif)---------------------------------------------
