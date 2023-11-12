@@ -37,3 +37,32 @@ and `'base',` will be added to the list of `INSTALLED_APPS` a show in the photo 
 
 
 <img width="802" alt="adding base app" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/9ee4b274-9e08-4866-9ac5-5d5eae746185">
+
+
+##### Creating template directory
+In the base folder, we will be creating a folder named `templates` inside which we will create another folder which corresponds with the app folder named `base`.
+inside the "base" folder we will create an `html` file which we will name `home.html`
+
+
+<img width="761" alt="homeHTML created" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/89bbd5db-a984-45e4-8ddf-0ed01b78694b">
+
+
+##### Creating function to render template
+We will have create a function that will render this template, and this configuration is done in the file named `view.py` which is located in the outter "base" folder
+
+
+The `views` configuration basically functions that take in a request as return an http response, templates, etc..
+This will be done by adding the following lines of code
+``` python
+def home(request):
+	return render(request, 'base/home.html')
+```
+
+this fucntion returns the template
+
+
+<img width="936" alt="views" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/09975638-d6b0-48c2-a36c-89bdc73ad3a6">
+
+
+##### Creating a URL routing system
+In the `base` app folder, we will create another file called `urls.py`
