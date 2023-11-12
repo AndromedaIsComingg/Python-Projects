@@ -20,3 +20,20 @@ This tells us that our project is now live on `127.0.0.1:8000` and we will proce
 <img width="1138" alt="Django homepage" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/f41dd073-3e3d-4d0e-a9cc-1cfc10746ef2">
 
 Seeing the Django wwelcome page above shows that we have successfully installed and launched Django
+
+
+Now the next step is to customize our files and settings such that Django will serve the files we want and not the default.
+For the we will be openning the files and editing them in any preferred text editor (for this we will be using `sublime text`.
+
+
+##### Creating the app folder
+This is where all datasese and templates will be stored, for this we will be using the command `python manage.py startapp base` please note that `base` is a desired name, and this process creates a folder named "base" in the directory. 
+
+
+##### Connecting the app forlder to setting.py
+This is a configuration done so that the project will be aware of the just created app
+
+and `'base',` will be added to the list of `INSTALLED_APPS` a show in the photo below
+
+
+<img width="802" alt="adding base app" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/9ee4b274-9e08-4866-9ac5-5d5eae746185">
