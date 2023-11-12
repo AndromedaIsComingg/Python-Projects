@@ -66,3 +66,13 @@ this fucntion returns the template
 
 ##### Creating a URL routing system
 In the `base` app folder, we will create another file called `urls.py`
+
+
+This will be responsible for calling the function `home`, which will in turn render the template `home.html`
+
+
+<img width="1104" alt="urls config" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/7ac4a033-63bd-4d15-9b1c-b362a07ac0eb">
+
+
+##### Configuring base urls.py file
+There is another default `url.py` file ine the base folder
