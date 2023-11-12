@@ -1,8 +1,18 @@
 # Simple_Portfolio_Website
+##### This project is a simple portfolio website created with `Django`
+
+Django is a high-level web framework written in Python that encourages rapid development and clean, pragmatic design. It follows the Model-View-Controller (MVC) architectural pattern, but in Django, it's often referred to as the Model-View-Template (MVT) pattern.
 
 
+##### Prerequisites
+- Python 
+- Pip
+- Django
+- Command Line Interface
+- Text Editor
+  
 
-From our command line interface, we will make sure to be in the desired working directory afterwhich we will create our project file using the command `django-admin startproject simplewebsite` with `simplewebsite` being the desired project name.
+From the command line interface(CLI), we will make sure to be in the desired working directory afterwhich we will create our project file using the command `django-admin startproject simplewebsite` with `simplewebsite` being the desired project name.
 This automatically creates a folder with the project name in the directory.
 
 <img width="684" alt="projeect start" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/7262de0a-cb9d-4f7f-b1b3-1ba0c253a21a">
@@ -346,6 +356,8 @@ This Should produce an output like in the photos below
 <img width="1263" alt="output 2" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/28691098-5fed-4f1a-9134-691ce13264e1">
 
 <img width="1280" alt="output 3" src="https://github.com/AndromedaIsComingg/Python-Projects/assets/140917780/3d0dfa3b-eff8-4d6d-88a8-b98d28bf430d">
+
+
 
 
 ---------------------------------![Alt Text](https://cssbud.com/wp-content/uploads/2021/05/thanks-for-your-time.gif)---------------------------------------------
