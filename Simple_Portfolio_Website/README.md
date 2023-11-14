@@ -1,7 +1,11 @@
 # Simple_Portfolio_Website
 ##### This project is a simple portfolio website created with `Django`
 
-Django is a high-level web framework written in Python that encourages rapid development and clean, pragmatic design. It follows the Model-View-Controller (MVC) architectural pattern, but in Django, it's often referred to as the Model-View-Template (MVT) pattern.
+
+It demonstrates the application of `Django` with `Python` as a very powerful web framework.
+`Django` is a high-level web framework written in Python that encourages rapid development and clean, pragmatic design. It follows the Model-View-Controller (MVC) architectural pattern, but in `Django`, it's often referred to as the Model-View-Template (MVT) pattern.
+The goal of this is to show the elegance of `Django` as a web framework of `Python`, where a simple template is created in an app, and how a `Python` function was created to render this function.
+This project also shows how to create and use static files.
 
 
 ##### Prerequisites
