@@ -1,33 +1,36 @@
-trades = []
-spent = []
+crypto_amount = []
+total_buy = []
 
-close = str(input('press s to stop or any other key to continue: '))
-closed = close.lower()
+def take_input():
+    count = 0
+    while True:
+        count += 1
+        ns = int(input(f"\nTotal Purchase in naira for transaction {count}: "))
+        fee = int(input(f"\nCharges for transaction {count}: "))
+        bp = int(input(f"\nUnit Buying Price for transaction {count}: "))
+        
+        value = (ns + fee)/bp
+        
+        crypto_amount.append(value)
+        
+        total_buy.append(ns)
 
-
-while True:
-    
-    if closed != 's':
-
-        buy_price = int(input ("Enter purchase amount in Naira against USDT: "))
-        naira_spent = int(input ("Enter how much naira was used to purchase asset: "))
-        transfer_fee = int(input ("Enter transfer fee(s): "))
-        selling_price = int(input ("Enter selling amount in Naira against USDT: "))
-
-        crypto_amount = (naira_spent + transfer_fee) / buy_price
- 
-        trades.append(crypto_amount)
-        spent.append(naira_spent)
-        print(crypto_amount)
-        print (naira_spent)
-
-        total_sale = selling_price * crypto_amount 
-        profit_loss = (sum(trades) * selling_price) - sum(spent)
-
-        continue
-    else:
-        selling_price = 0 
-        profit_loss = (sum(trades) * selling_price) - sum(spent)
-
-        print(f'your profit is', {profit_loss})
+        check = input("Another transaction? y/n")
+        if check == 'y':
+            continue
         break
+    
+    return sum(crypto_amount), sum(total_buy) 
+
+
+def trade():
+    crypto_amount, total_buy = take_input()
+    
+    sp = int(input("\nUnit selling price? "))
+    
+    trade_value = (sp * crypto_amount) - total_buy
+    # print(sp, crypto_amount, total_buy)
+    
+    return trade_value
+
+print(trade())
