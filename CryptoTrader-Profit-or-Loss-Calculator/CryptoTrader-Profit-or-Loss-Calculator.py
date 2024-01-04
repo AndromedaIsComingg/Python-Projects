@@ -1,13 +1,21 @@
 crypto_amount = []
 total_buy = []
 
+
+def handle_error(val):
+    while True:
+        try:
+            return int(input (val))
+        except ValueError:
+            print ('enter a valid integer: ')
+
 def take_input():
     count = 0
     while True:
         count += 1
-        ns = int(input(f"\nTotal Purchase in naira for transaction {count}: "))
-        fee = int(input(f"\nCharges for transaction {count}: "))
-        bp = int(input(f"\nUnit Buying Price for transaction {count}: "))
+        ns = handle_error(f"\nTotal Purchase in naira for transaction {count}: ")
+        fee = handle_error(f"\nCharges for transaction {count}: ")
+        bp = handle_error(f"\nUnit Buying Price for transaction {count}: ")
         
         value = (ns + fee)/bp
         
@@ -15,8 +23,9 @@ def take_input():
         
         total_buy.append(ns)
 
-        check = input("Another transaction? y/n")
-        if check == 'y':
+        if input("Another transaction? y/n: ").lower() == 'y':
+        # check = input("Another transaction? y/n").lower()
+        # if check == 'y':
             continue
         break
     
@@ -24,13 +33,13 @@ def take_input():
 
 
 def trade():
+    
     crypto_amount, total_buy = take_input()
     
-    sp = int(input("\nUnit selling price? "))
-    
+    sp = handle_error("\nUnit selling price? ")
+
     trade_value = (sp * crypto_amount) - total_buy
     # print(sp, crypto_amount, total_buy)
     
     return trade_value
-
-print(trade())
+print (trade())
