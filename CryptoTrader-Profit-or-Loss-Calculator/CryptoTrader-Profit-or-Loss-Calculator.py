@@ -4,17 +4,17 @@ from tkinter import messagebox
 crypto_amount = []
 total_buy = []
 
-def handle_error(val):
+def handle_error(val, field_name):
     try:
         return float(val)
     except ValueError:
-        messagebox.showerror('Error', 'Enter a valid number')
+        messagebox.showerror('Error', f'Enter a valid number for {field_name}')
         return None
 
 def take_input():
-    ns = handle_error(entry_ns.get())
-    fee = handle_error(entry_fee.get())
-    bp = handle_error(entry_bp.get())
+    ns = handle_error(entry_ns.get(), 'Total Purchase in Naira')
+    fee = handle_error(entry_fee.get(), 'Charges')
+    bp = handle_error(entry_bp.get(), 'Unit Buying Price')
 
     if ns is not None and fee is not None and bp is not None:
         value = (ns + fee) / bp
@@ -27,7 +27,7 @@ def take_input():
 
 def trade():
     take_input()  # Ensure the last transaction is processed
-    sp = handle_error(entry_sp.get())
+    sp = handle_error(entry_sp.get(), 'Unit Selling Price')
     if sp is not None:
         trade_value = (sp * sum(crypto_amount)) - sum(total_buy)
         messagebox.showinfo('Trade Result', f'Trade Value: {trade_value}')
