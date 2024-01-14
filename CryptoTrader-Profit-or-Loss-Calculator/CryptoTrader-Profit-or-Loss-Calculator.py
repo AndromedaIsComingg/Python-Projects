@@ -5,39 +5,32 @@ crypto_amount = []
 total_buy = []
 
 def handle_error(val):
-    while True:
-        try:
-            return int(val)
-        except ValueError:
-            messagebox.showerror('Error', 'Enter a valid integer')
+    try:
+        return float(val)
+    except ValueError:
+        messagebox.showerror('Error', 'Enter a valid number')
+        return None
 
 def take_input():
-    count = 0
-    while True:
-        count += 1
+    ns = handle_error(entry_ns.get())
+    fee = handle_error(entry_fee.get())
+    bp = handle_error(entry_bp.get())
 
-        ns = handle_error(entry_ns.get())
-        fee = handle_error(entry_fee.get())
-        bp = handle_error(entry_bp.get())
-
+    if ns is not None and fee is not None and bp is not None:
         value = (ns + fee) / bp
         crypto_amount.append(value)
         total_buy.append(ns)
 
-        if messagebox.askyesno('Another Transaction?', 'Do you want to add another transaction?'):
-            entry_ns.delete(0, tk.END)
-            entry_fee.delete(0, tk.END)
-            entry_bp.delete(0, tk.END)
-            continue
-        break
-
-    return sum(crypto_amount), sum(total_buy)
+    entry_ns.delete(0, tk.END)
+    entry_fee.delete(0, tk.END)
+    entry_bp.delete(0, tk.END)
 
 def trade():
-    crypto_amount, total_buy = take_input()
+    take_input()  # Ensure the last transaction is processed
     sp = handle_error(entry_sp.get())
-    trade_value = (sp * crypto_amount) - total_buy
-    messagebox.showinfo('Trade Result', f'Trade Value: {trade_value}')
+    if sp is not None:
+        trade_value = (sp * sum(crypto_amount)) - sum(total_buy)
+        messagebox.showinfo('Trade Result', f'Trade Value: {trade_value}')
 
 # Create the main window
 root = tk.Tk()
