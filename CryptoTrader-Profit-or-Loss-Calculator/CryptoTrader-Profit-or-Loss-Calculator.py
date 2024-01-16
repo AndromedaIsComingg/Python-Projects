@@ -30,6 +30,7 @@ def trade():
     sp = handle_error(entry_sp.get(), 'Unit Selling Price')
     if sp is not None:
         trade_value = (sp * sum(crypto_amount)) - sum(total_buy)
+        trade_value =  round(trade_value, 3 )
         messagebox.showinfo('Trade Result', f'Trade Value: {trade_value}')
 
 # Create the main window
