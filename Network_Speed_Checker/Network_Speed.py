@@ -1,20 +1,32 @@
 import tkinter as tk
-from tkinter import Label, Button
+from tkinter import Label, Button, Scale
 import speedtest
 import threading
 import time
+import pygame
 
 class NetworkSpeedTestApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Network Speed Checker")
-        self.root.geometry("400x200")
+        self.root.geometry("400x300")
 
         self.label_result = Label(self.root, text="", font=("Helvetica", 14))
-        self.label_result.pack(pady=30)
+        self.label_result.pack(pady=10)
 
         self.button_start_test = Button(self.root, text="Start Speed Test", command=self.run_speed_test)
         self.button_start_test.pack(pady=10)
+
+        pygame.mixer.init()
+        pygame.mixer.music.load("/Users/Adebisi/Documents/Python_Projects/Network_Speed_Checker/sounds/backgroud.wav")  # Replace with the path to your sound file
+        self.volume = 0.5  # Initial volume
+        pygame.mixer.music.set_volume(self.volume)
+        
+        # Play the background sound immediately
+        pygame.mixer.music.play(-1)  # -1 plays the sound in a loop
+
+        # Bind the window closing event to the method
+        self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def run_speed_test(self):
         self.label_result.config(text="Checking network speed..")
@@ -36,11 +48,16 @@ class NetworkSpeedTestApp:
             self.label_result.config(text=result_text)
 
         except speedtest.ConfigRetrievalError:
-            error_text = "Error retrieving speed test configuration \nPlease check your internet connection."
+            error_text = "Error retrieving speed test configuration. Please check your internet connection."
             self.label_result.config(text=error_text)
         except Exception as e:
             error_text = f"An error occurred: {str(e)}"
             self.label_result.config(text=error_text)
+
+    def on_closing(self):
+        # Stop the background sound when the user closes the app
+        pygame.mixer.music.stop()
+        self.root.destroy()
 
     @staticmethod
     def bytes_to_mb(bytes):
